@@ -1,6 +1,6 @@
-import { catalogo, salvarLocalstorage, lerLocalstorage} from "./utilidades";
+import { catalogo, salvarLocalstorage, lerLocalstorage } from "./utilidades";
 
-const idsProdutosCarrinhoComQuantidade = lerLocalstorage('carrinho') ?? {};
+const idsProdutosCarrinhoComQuantidade = lerLocalstorage("carrinho") ?? {};
 
 function abrirCarrinho() {
   document.getElementById("carrinho").classList.add("right-[0px]");
@@ -22,14 +22,14 @@ export function inicializarCarrinho() {
 
 function removerDoCarrinho(idProduto) {
   delete idsProdutosCarrinhoComQuantidade[idProduto];
-  salvarLocalstorage('carrinho', idsProdutosCarrinhoComQuantidade);
+  salvarLocalstorage("carrinho", idsProdutosCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   renderizarProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto) {
   idsProdutosCarrinhoComQuantidade[idProduto]++;
-  salvarLocalstorage('carrinho', idsProdutosCarrinhoComQuantidade);
+  salvarLocalstorage("carrinho", idsProdutosCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   atualizarInformacoesQuantidade(idProduto);
 }
@@ -40,7 +40,7 @@ function decrementarQuantidadeProduto(idProduto) {
     return;
   }
   idsProdutosCarrinhoComQuantidade[idProduto]--;
-  salvarLocalstorage('carrinho', idsProdutosCarrinhoComQuantidade);
+  salvarLocalstorage("carrinho", idsProdutosCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   atualizarInformacoesQuantidade(idProduto);
 }
@@ -70,8 +70,8 @@ function desenharProdutonoCarrinho(idProduto) {
   }
 
   const cartaoProdutoCarrinho = `
-    <button id="remover-item-${produto.id}" class="absolute top-0 right-2">
-      <i class="fa-regular fa-circle-xmark text-slate-700 hover:text-slate-400"></i>
+    <button id="remover-item-${produto.id}" class="absolute top-2 right-2">
+      <i class="fa-solid fa-trash text-red-600 hover:text-red-700"></i>
     </button>
 
     <img src="./assets/img/${produto.imagem}" alt="${

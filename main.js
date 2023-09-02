@@ -1,5 +1,6 @@
 import { renderizarCatalago } from "./src/cartaoProduto";
 import { wishList } from "./src/cartaoProduto";
+import { inicializarFiltros } from "./src/filtrosCatalogo";
 import {
   atualizarPrecoCarrinho,
   inicializarCarrinho,
@@ -12,6 +13,7 @@ function init() {
   inicializarCarrinho();
   renderizarProdutosCarrinho();
   atualizarPrecoCarrinho();
+  inicializarFiltros();
 }
 
 init();
