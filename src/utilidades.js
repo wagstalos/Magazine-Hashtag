@@ -63,6 +63,12 @@ export const catalogo = [
       imagem: "product-8.jpg",
       feminino: true,
     },
-  ];
+];
   
-  
+export function salvarLocalstorage(chave, informacao){
+  localStorage.setItem(chave, JSON.stringify(informacao))
+}
+
+export function lerLocalstorage(chave){
+ return JSON.parse(localStorage.getItem(chave));
+}
