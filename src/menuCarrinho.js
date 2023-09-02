@@ -22,20 +22,23 @@ export function inicializarCarrinho() {
 
 function removerDoCarrinho(idProduto) {
   delete idsProdutosCarrinhoComQuantidade[idProduto];
+  atualizarPrecoCarrinho();
   renderizarProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto) {
   idsProdutosCarrinhoComQuantidade[idProduto]++;
+  atualizarPrecoCarrinho();
   atualizarInformacoesQuantidade(idProduto);
 }
 
 function decrementarQuantidadeProduto(idProduto) {
-  if(idsProdutosCarrinhoComQuantidade[idProduto] === 1){
+  if (idsProdutosCarrinhoComQuantidade[idProduto] === 1) {
     removerDoCarrinho(idProduto);
     return;
   }
   idsProdutosCarrinhoComQuantidade[idProduto]--;
+  atualizarPrecoCarrinho();
   atualizarInformacoesQuantidade(idProduto);
 }
 
@@ -104,23 +107,19 @@ function desenharProdutonoCarrinho(idProduto) {
     .getElementById(`incrementar-produto-${produto.id}`)
     .addEventListener("click", () => incrementarQuantidadeProduto(produto.id));
 
-    
   document
-  .getElementById(`remover-item-${produto.id}`)
-  .addEventListener("click", () => removerDoCarrinho(produto.id));
-
-
+    .getElementById(`remover-item-${produto.id}`)
+    .addEventListener("click", () => removerDoCarrinho(produto.id));
 }
 
 function renderizarProdutosCarrinho() {
   const conatinerProdutosCarrinho =
-  document.getElementById("produtos-carrinho");
-  conatinerProdutosCarrinho.innerHTML = '';
+    document.getElementById("produtos-carrinho");
+  conatinerProdutosCarrinho.innerHTML = "";
 
-  for (const idProduto in idsProdutosCarrinhoComQuantidade){
-    desenharProdutonoCarrinho(idProduto)
+  for (const idProduto in idsProdutosCarrinhoComQuantidade) {
+    desenharProdutonoCarrinho(idProduto);
   }
-
 }
 
 export function adicionarAoCarrinho(idProduto) {
@@ -129,5 +128,19 @@ export function adicionarAoCarrinho(idProduto) {
     return;
   }
   idsProdutosCarrinhoComQuantidade[idProduto] = 1;
-  desenharProdutonoCarrinho(idProduto)
+  desenharProdutonoCarrinho(idProduto);
+  atualizarPrecoCarrinho();
+}
+
+function atualizarPrecoCarrinho() {
+  const precoCarrinho = document.getElementById("preco-total");
+  let precoTotalCarrinho = 0;
+
+  for (const idProdutoNoCarrinho in idsProdutosCarrinhoComQuantidade) {
+    precoTotalCarrinho +=
+      catalogo.find((p) => p.id === idProdutoNoCarrinho).preco *
+      idsProdutosCarrinhoComQuantidade[idProdutoNoCarrinho];
+  }
+
+  precoCarrinho.innerText = `$${precoTotalCarrinho}`;
 }
