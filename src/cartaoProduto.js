@@ -3,7 +3,10 @@ import { catalogo } from "./utilidades";
 
 export function renderizarCatalago() {
   for (const produtoCatalogo of catalogo) {
-    const cartaoProduto = `<div class='shadow bg-white rounded-lg w-60 m-2 bg-slate-100 rounded-xl flex flex-col p-2 justify-between group relative' id="card-produto-${produtoCatalogo.id}">
+    const cartaoProduto = 
+    `<div class='shadow bg-white rounded-lg 
+                w-60 m-2 bg-slate-100 rounded-xl 
+                flex flex-col p-2 justify-between group relative ${produtoCatalogo.feminino ? 'feminino' : 'masculino' }' id="card-produto-${produtoCatalogo.id}">
         <i class="fa-regular fa-heart absolute top-4 right-4 z-10 cursor-pointer"></i>  
      
         <img class="h-100 rounded-xl group-hover:scale-105 duration-200"
