@@ -86,13 +86,13 @@ function desenharProdutonoCarrinho(idProduto) {
     <div class="flex text-slate-950 items-end absolute bottom-0 right-2 text-lg">
         <button id='decrementar-produto-${
           produto.id
-        }' class="font-semibold ">-</button>
+        }' class="font-semibold "><i class="fa-solid fa-minus"></i></button>
         <p id="quantidade-${produto.id}" class="ml-2">${
     idsProdutosCarrinhoComQuantidade[produto.id]
   }</p>
         <button id='incrementar-produto-${
           produto.id
-        }' class="ml-2 font-semibold ">+</button>
+        }' class="ml-2 font-semibold "><i class="fa-solid fa-plus"></i></button>
     </div>
     `;
 
