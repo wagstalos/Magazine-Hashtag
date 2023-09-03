@@ -90,7 +90,8 @@ function desenharProdutonoCarrinho(idProduto) {
 
     <div class="p-2 flex flex-col justify-between">
       <p class="ml-2 text-slate-900 font-semibold text-sm ">${produto.nome}</p>
-      <p class="ml-2 text-slate-400 text-xs">Tamanho: M</p>
+      <p class="ml-2 text-slate-400 text-xs">${produto.marca}</p>
+
       <p class="ml-2 font-semibold text-teal-400 text-lg">${produto.preco.toLocaleString(
         "pt-br",
         { style: "currency", currency: "BRL" }

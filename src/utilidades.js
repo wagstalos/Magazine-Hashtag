@@ -3,8 +3,8 @@ export const catalogo = [
     id: "1",
     marca: "Integralmedica",
     nome: "Whey protein",
-    preco: 79.90,
-    precoAntigo: 84.90,
+    preco: 79.9,
+    precoAntigo: 84.9,
     imagem: "product-1.jpg",
     feminino: false,
   },
@@ -111,9 +111,9 @@ export function desenharProdutoCarrinhoSimples(
 
     <img src="./assets/img/${produto.imagem}" alt="${produto.nome}" class="h-24 rounded-lg">
 
-    <div class="p-2 flex flex-col justify-between">
+    <div class="p-2 flex flex-col">
       <p class="ml-2 text-slate-900 font-semibold text-sm ">${produto.nome}</p>
-      <p class="ml-2 text-slate-400 text-xs">Tamanho: M</p>
+      <p class="ml-2 text-slate-400 text-xs">${produto.marca}</p>
 
     </div>
 
