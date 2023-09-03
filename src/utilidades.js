@@ -1,67 +1,67 @@
 export const catalogo = [
   {
     id: "1",
-    marca: "Zara",
-    nome: "Camisa Larga com Bolsos",
-    preco: 70,
+    marca: "Integralmedica",
+    nome: "Whey protein",
+    preco: 79.9,
     imagem: "product-1.jpg",
     feminino: false,
   },
   {
     id: "2",
-    marca: "Zara",
-    nome: "Casaco Reto com Lã",
-    preco: 85,
+    marca: "Black Skull",
+    nome: "Whey 3hd",
+    preco: 84.9,
     imagem: "product-2.jpg",
-    feminino: true,
+    feminino: false,
   },
   {
     id: "3",
-    marca: "Zara",
-    nome: "Jaqueta com Efeito Camurça",
-    preco: 60,
+    marca: "Integralmedica",
+    nome: "Creatina",
+    preco: 29.9,
     imagem: "product-3.jpg",
-    feminino: false,
+    feminino: true,
   },
   {
     id: "4",
-    marca: "Zara",
-    nome: "Sobretudo em Mescla de Lã",
-    preco: 160,
+    marca: "Black Skull",
+    nome: "BCAA",
+    preco: 34.9,
     imagem: "product-4.jpg",
-    feminino: false,
+    feminino: true,
   },
   {
     id: "5",
-    marca: "Zara",
-    nome: "Camisa Larga Acolchoada de Veludo Cotelê",
-    preco: 110,
+    marca: "Atlhetica",
+    nome: "BCAA ",
+    preco: 29.9,
     imagem: "product-5.jpg",
-    feminino: false,
+    feminino: true,
   },
   {
     id: "6",
-    marca: "Zara",
-    nome: "Casaco de Lã com Botões",
-    preco: 170,
+    marca: "Proteína pura ",
+    nome: "pasta de amendoim",
+    preco: 19.9,
     imagem: "product-6.jpg",
     feminino: true,
   },
   {
     id: "7",
-    marca: "Zara",
-    nome: "Casaco com Botões",
-    preco: 75,
+    marca: "Black Skull",
+    nome: "Whey 3hd",
+    preco: 84.9,
     imagem: "product-7.jpg",
-    feminino: true,
+    feminino: false,
   },
   {
     id: "8",
-    marca: "Zara",
-    nome: "Colete Comprido com Cinto",
-    preco: 88,
+    marca: "Integralmedica",
+    nome: "Whey protein",
+    preco: 79.9,
     imagem: "product-8.jpg",
-    feminino: true,
+    feminino: false,
   },
 ];
 
@@ -73,7 +73,7 @@ export function lerLocalstorage(chave) {
   return JSON.parse(localStorage.getItem(chave));
 }
 
-export function apagarDoLocalStorage(chave){
+export function apagarDoLocalStorage(chave) {
   localStorage.removeItem(chave);
 }
 
