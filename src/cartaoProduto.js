@@ -14,7 +14,7 @@ export function renderizarCatalago() {
                   src="./assets/img/${produtoCatalogo.imagem}"
                   alt="Produto 1 do Magazine Hashtag."
               />
-              <p class="px-2 text-sm font-medium text-slate-700 mt-4">${
+              <p class="px-2 text-sm font-medium text-slate-400 mt-4"><i class="fa-solid fa-bolt"></i>${
                 produtoCatalogo.marca
               }</p>
 

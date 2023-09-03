@@ -22,7 +22,7 @@ export const catalogo = [
     marca: "Integralmedica",
     nome: "Creatina",
     preco: 29.9,
-    precoAntigo: [],
+    precoAntigo: 34.99,
     imagem: "product-3.jpg",
     feminino: true,
   },
