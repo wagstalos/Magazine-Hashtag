@@ -91,9 +91,10 @@ function desenharProdutonoCarrinho(idProduto) {
     <div class="p-2 flex flex-col justify-between">
       <p class="ml-2 text-slate-900 font-semibold text-sm ">${produto.nome}</p>
       <p class="ml-2 text-slate-400 text-xs">Tamanho: M</p>
-      <p class="ml-2 font-semibold text-green-600 text-lg">R$ ${
-        produto.preco
-      }</p>
+      <p class="ml-2 font-semibold text-green-600 text-lg">${produto.preco.toLocaleString(
+        "pt-br",
+        { style: "currency", currency: "BRL" }
+      )}</p>
     </div>
 
     <div class="flex text-slate-950 items-end absolute bottom-0 right-2 text-lg">
@@ -143,7 +144,7 @@ export function adicionarAoCarrinho(idProduto) {
 
   const successElement = document.getElementById("success");
   successElement.classList.remove("hidden");
-  
+
   function removerClasseHidden() {
     successElement.classList.remove("hidden");
     // Define um timeout para adicionar a classe "hidden" novamente após 3 segundos
@@ -169,5 +170,8 @@ export function atualizarPrecoCarrinho() {
       idsProdutosCarrinhoComQuantidade[idProdutoNoCarrinho];
   }
 
-  precoCarrinho.innerText = `$${precoTotalCarrinho}`;
+  precoCarrinho.innerText = `${precoTotalCarrinho.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
 }

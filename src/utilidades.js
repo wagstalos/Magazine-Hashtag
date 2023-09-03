@@ -3,7 +3,8 @@ export const catalogo = [
     id: "1",
     marca: "Integralmedica",
     nome: "Whey protein",
-    preco: 79.9,
+    preco: 79.90,
+    precoAntigo: 84.90,
     imagem: "product-1.jpg",
     feminino: false,
   },
@@ -12,6 +13,7 @@ export const catalogo = [
     marca: "Black Skull",
     nome: "Whey 3hd",
     preco: 84.9,
+    precoAntigo: [],
     imagem: "product-2.jpg",
     feminino: false,
   },
@@ -20,6 +22,7 @@ export const catalogo = [
     marca: "Integralmedica",
     nome: "Creatina",
     preco: 29.9,
+    precoAntigo: [],
     imagem: "product-3.jpg",
     feminino: true,
   },
@@ -28,6 +31,7 @@ export const catalogo = [
     marca: "Black Skull",
     nome: "BCAA",
     preco: 34.9,
+    precoAntigo: [],
     imagem: "product-4.jpg",
     feminino: true,
   },
@@ -36,6 +40,7 @@ export const catalogo = [
     marca: "Atlhetica",
     nome: "BCAA ",
     preco: 29.9,
+    precoAntigo: [],
     imagem: "product-5.jpg",
     feminino: true,
   },
@@ -44,6 +49,7 @@ export const catalogo = [
     marca: "Proteína pura ",
     nome: "pasta de amendoim",
     preco: 19.9,
+    precoAntigo: [],
     imagem: "product-6.jpg",
     feminino: true,
   },
@@ -52,6 +58,7 @@ export const catalogo = [
     marca: "Black Skull",
     nome: "Whey 3hd",
     preco: 84.9,
+    precoAntigo: [],
     imagem: "product-7.jpg",
     feminino: false,
   },
@@ -60,6 +67,7 @@ export const catalogo = [
     marca: "Integralmedica",
     nome: "Whey protein",
     preco: 79.9,
+    precoAntigo: [],
     imagem: "product-8.jpg",
     feminino: false,
   },
@@ -106,7 +114,7 @@ export function desenharProdutoCarrinhoSimples(
     <div class="p-2 flex flex-col justify-between">
       <p class="ml-2 text-slate-900 font-semibold text-sm ">${produto.nome}</p>
       <p class="ml-2 text-slate-400 text-xs">Tamanho: M</p>
-      <p class="ml-2 font-semibold text-green-600 text-lg">R$ ${produto.preco}</p>
+
     </div>
 
     <div class="flex text-slate-950 items-end absolute bottom-0 right-2 text-lg">

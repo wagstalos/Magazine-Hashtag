@@ -14,15 +14,39 @@ export function renderizarCatalago() {
                   src="./assets/img/${produtoCatalogo.imagem}"
                   alt="Produto 1 do Magazine Hashtag."
               />
-              <p class="px-2 text-sm font-medium text-slate-700 mt-2">${
+              <p class="px-2 text-sm font-medium text-slate-700 mt-4">${
                 produtoCatalogo.marca
               }</p>
-              <p class="px-2 text-lg font-semibold text-slate-900">${
+
+              <p class="px-2 text-lg font-semibold text-slate-900 mb-2">${
                 produtoCatalogo.nome
               }</p>
-              <p class="px-2 text-lg font-semibold text-slate-500">$${
-                produtoCatalogo.preco
-              }</p>
+
+
+              <div class="flex justify-between items-end mb-4">
+                <div>
+                  <del class="px-2 text-sm text-gray-400"> ${produtoCatalogo.precoAntigo.toLocaleString(
+                    "pt-br",
+                    { style: "currency", currency: "BRL" }
+                  )}</del>
+
+                  <p class="px-2 text-lg font-semibold text-teal-400 ">${produtoCatalogo.preco.toLocaleString(
+                    "pt-br",
+                    { style: "currency", currency: "BRL" }
+                  )}</p>
+                </div>
+
+                <div class="flex px-2  text-amber-400">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <small class="text-slate-300">(5)</small>
+                </div>
+
+              </div>
+
               <button id='adicionar-${
                 produtoCatalogo.id
               }' class="h-10 px-6 font-semibold rounded-md bg-black hover:bg-slate-800 text-white"><i class="fa-solid fa-cart-plus"></i></button>
@@ -57,9 +81,9 @@ export function wishList() {
         this.classList.add("fa-solid");
         // alert("adicionado");
         msgFavorite.classList.remove("hidden");
-        setTimeout(function() {
+        setTimeout(function () {
           msgFavorite.classList.add("hidden");
-      }, 3000);
+        }, 3000);
       }
     });
   });
