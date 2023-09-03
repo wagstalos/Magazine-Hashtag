@@ -93,7 +93,6 @@ export function desenharProdutoCarrinhoSimples(
     "p-1",
     "relative",
     "mb-2",
-    "w-96"
   ];
 
   for (const articleClass of articleClasses) {

@@ -12,18 +12,18 @@ function fecharCarrinho() {
   document.getElementById("carrinho").classList.add("right-[-360px]");
 }
 
-function irParaCheckout(){
-  if(Object.keys(idsProdutosCarrinhoComQuantidade).length === 0){
+function irParaCheckout() {
+  if (Object.keys(idsProdutosCarrinhoComQuantidade).length === 0) {
     return;
   }
 
-  window.location.href = window.location.origin + '/checkout.html';
+  window.location.href = window.location.origin + "/checkout.html";
 }
 
 export function inicializarCarrinho() {
   const botaoFecharCarrinho = document.getElementById("fechar-carrinho");
   const botaoAbrirCarrinho = document.getElementById("abrir-carrinho");
-  const botaoIrParaCheckout = document.getElementById("finalizar-compra")
+  const botaoIrParaCheckout = document.getElementById("finalizar-compra");
 
   botaoFecharCarrinho.addEventListener("click", fecharCarrinho);
   botaoAbrirCarrinho.addEventListener("click", abrirCarrinho);
@@ -140,6 +140,19 @@ export function adicionarAoCarrinho(idProduto) {
     incrementarQuantidadeProduto(idProduto);
     return;
   }
+
+  const successElement = document.getElementById("success");
+  successElement.classList.remove("hidden");
+  
+  function removerClasseHidden() {
+    successElement.classList.remove("hidden");
+    // Define um timeout para adicionar a classe "hidden" novamente após 3 segundos
+    setTimeout(function () {
+      successElement.classList.add("hidden");
+    }, 3000); // 3000 milissegundos = 3 segundos
+  }
+  removerClasseHidden();
+
   idsProdutosCarrinhoComQuantidade[idProduto] = 1;
   salvarLocalstorage("carrinho", idsProdutosCarrinhoComQuantidade);
   desenharProdutonoCarrinho(idProduto);

@@ -3,6 +3,7 @@ import {
   lerLocalstorage,
   apagarDoLocalStorage,
   salvarLocalstorage,
+  
 } from "./src/utilidades";
 
 function desenharProdutosCheckout() {
