@@ -4,9 +4,12 @@ import {
 } from "./src/utilidades";
 
 function criarPedidoHistorico(pedidoComData) {
-  const elementoPedido = `<p class='text-xl text-bold'>${pedidoComData.dataPedido}</p>
-        <section id='container-pedidos-${pedidoComData.dataPedido}'></section>
-    `;
+  const elementoPedido = `<p class='text-xl text-bold my-4'>${new Date(
+    pedidoComData.dataPedido
+  ).toLocaleDateString("pt-BR",{hour: '2-digit', minute: "2-digit"} )}</p>
+        <section id='container-pedidos-${
+          pedidoComData.dataPedido
+        }' class="bg-slate-300 p-3 rounded-md"></section>`;
 
   const main = document.getElementsByTagName("main")[0];
   main.innerHTML += elementoPedido;
@@ -20,13 +23,12 @@ function criarPedidoHistorico(pedidoComData) {
   }
 }
 
-function renderizarHistoticoPedidos(){
-    const historico = lerLocalstorage('historico');
+function renderizarHistoticoPedidos() {
+  const historico = lerLocalstorage("historico");
 
-    for(const pedidoComData of historico){
-        criarPedidoHistorico(pedidoComData)
-    }
-
+  for (const pedidoComData of historico) {
+    criarPedidoHistorico(pedidoComData);
+  }
 }
 
 renderizarHistoticoPedidos();
