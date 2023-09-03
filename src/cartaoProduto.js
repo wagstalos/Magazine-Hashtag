@@ -12,7 +12,7 @@ export function renderizarCatalago() {
      
         <img class="h-100 rounded-xl group-hover:scale-105 duration-200"
                   src="/assets/img/${produtoCatalogo.imagem}"
-                  alt="Produto 1 do Magazine Hashtag."
+                  alt="${produtoCatalogo.nome}."
               />
               <p class="px-2 text-sm font-medium text-slate-400 mt-4"><i class="fa-solid fa-bolt"></i>${
                 produtoCatalogo.marca
