@@ -29,7 +29,7 @@ function finalizarCompra(evento) {
     pedido: idsProdutosCarrinhoComQuantidade,
   };
 
-  const historicoDePedidos = salvarLocalstorage("historico") ?? [];
+  const historicoDePedidos = lerLocalstorage("historico") ?? [];
   const historicoDePedidosAtualizado = [pedidoFeito, ...historicoDePedidos];
 
   salvarLocalstorage("historico", historicoDePedidosAtualizado);
